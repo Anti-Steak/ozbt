@@ -57,8 +57,8 @@ if(game === undefined || game === "") {
   } else if(category0 !== "" || category0 !== undefined) {
     request('http://www.speedrun.com/api/v1/games?name=' + game + '&max=1&embed=categories', (err, res, body) => {
       var title = JSON.parse(body).data[0].names.international;
-      var gameid = JSON.parse(body).data[0].id;
-      request('http://www.speedrun.com/api/v1/leaderboards/' + gameid + '/category/' + category0 + '?embed=category,players', (err, res, body) => {
+      var gid = JSON.parse(body).data[0].id;
+      request('http://www.speedrun.com/api/v1/leaderboards/' + gid + '/category/' + category0 + '?embed=category,players', (err, res, body) => {
         if(!err) {
           var category3 = JSON.parse(body).data.category.data.name;
           var d = JSON.parse(body).data.runs[0].run.times.primary_t;
