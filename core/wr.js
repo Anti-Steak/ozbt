@@ -5,12 +5,6 @@ var user = JSON.parse(process.env.user);
 
 var args = process.env.message.split(" ");
 
-var util = require("../util.js");
-var consts = require('../consts.js');
-var user = JSON.parse(process.env.user);
-
-var args = process.env.message.split(" ");
-
 var request = require('request');
 var channame = process.env.channel.substring(1);
 var game = args.splice(1).join(" ").split(",")[0];
